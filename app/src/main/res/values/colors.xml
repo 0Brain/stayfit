@@ -3,4 +3,16 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="colorPrimaryTextDefaultMaterialLight">#DE000000</color>
+    <color name="colorSecondaryTextDefaultMaterialLight">#8A000000</color>
+
+    <color name="colorPrimaryTextDefaultMaterialDark">#FFFFFFFF</color>
+    <color name="colorSecondaryTextDefaultMaterialDark">#B3FFFFFF</color>
+    <color name="color_navigation_list_background">#DE000000</color>
+    <color name="color_selector_navigation_item">#B3FFFFFF</color>
+
+    <!--Profile page-->
+    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profileBackground">#fff</color>
 </resources>

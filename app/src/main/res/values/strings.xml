@@ -10,7 +10,26 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
+    <string name="nav_supplements">Supplements</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="nav_settings">Settings</string>
+
+
+    <!--Supplement Fragment-->
+    <string name="primary_supplement">Title goes here</string>
+    <string name="primary_short">Title here</string>
+    <string name="subtext">Subtitle here</string>
+    <string name="supplement_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="menu_activity">Activity</string>
+    <string name="menu_workout">Workouts</string>
+    <string name="menu_nutrition">Nutrition</string>
+    <string name="profile_screen_image">profile_screen_image</string>
+    <string name="profile_screen_title">Profile</string>
+    <string name="home">Home</string>
+
+    <!--Profile Screen Fragment-->
+    <string name="profile_page_image">userImage</string>
+    <string name="profile_main_text">Profile</string>
+    <string name="profile_page_name">developer@appsnipp.com</string>
 </resources>
