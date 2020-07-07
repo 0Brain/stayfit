@@ -1,9 +1,9 @@
-package com.zenith.stayfit.ui.supplements.viewmodels
+package com.zenith.stayfit.ui.supplements.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.zenith.stayfit.ui.supplements.data.Supplement
+import com.zenith.stayfit.ui.supplements.model.Supplement
 
 class SupplementsViewModel : ViewModel() {
 

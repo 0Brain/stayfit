@@ -9,7 +9,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.zenith.stayfit.R
-import com.zenith.stayfit.ui.supplements.data.Supplement
+import com.zenith.stayfit.ui.supplements.model.Supplement
 
 
 class SupplementAdapter() :RecyclerView.Adapter<SupplementAdapter.ViewHolder>(){

@@ -10,14 +10,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.zenith.stayfit.MainActivity
 import com.zenith.stayfit.R
 import com.zenith.stayfit.ui.supplements.Adapter.SupplementAdapter
-import com.zenith.stayfit.ui.supplements.data.Supplement
-import com.zenith.stayfit.ui.supplements.viewmodels.SupplementsViewModel
+import com.zenith.stayfit.ui.supplements.model.Supplement
+import com.zenith.stayfit.ui.supplements.viewmodel.SupplementsViewModel
 import kotlinx.android.synthetic.main.fragment_supplements.*
 
 
 class SupplementsFragment : Fragment(R.layout.fragment_supplements) {
     private lateinit var supplementsViewModel: SupplementsViewModel
-    private var adapter = SupplementAdapter()
+    private val adapter:SupplementAdapter by lazy {
+        SupplementAdapter()
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,7 +30,7 @@ class SupplementsFragment : Fragment(R.layout.fragment_supplements) {
         recycler_view.adapter = adapter
 
         (activity as MainActivity?)!!.hideFloatingActionButton()
-        supplementsViewModel.getSupplements().observe(viewLifecycleOwner, Observer<List<Supplement>> {t->
+        supplementsViewModel.getSupplements().observe(viewLifecycleOwner, Observer{t->
             adapter.setNotes(t!!)
         })
     }
