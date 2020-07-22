@@ -35,4 +35,10 @@
     <color name="md_grey">#7B8788</color>
     <color name="errorColor">#D50000</color>
 
+    <color name="colorBackground">#fff</color>
+    <color name="colorTextInputBackground">#F7F7F7</color>
+    <color name="md_cyan_A700">#00B8D4</color>
+    <color name="md_black_1000">#000000</color>
+    <color name="actionbarOpacity">#00000000</color>
+
 </resources>

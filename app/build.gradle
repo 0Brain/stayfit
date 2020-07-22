@@ -114,4 +114,7 @@ dependencies {
     //Hilt Android
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    //Circular ImageView Library dependency
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
 }
