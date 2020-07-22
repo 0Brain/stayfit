@@ -19,6 +19,5 @@ class RunFragment : Fragment(R.layout.fragment_run_setup) {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as MainActivity?)!!.hideFloatingActionButton()
     }
 }
