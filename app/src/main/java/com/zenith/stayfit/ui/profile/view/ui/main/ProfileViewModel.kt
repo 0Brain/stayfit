@@ -1,4 +1,5 @@
-package com.zenith.stayfit.ui.profile
+
+package com.zenith.stayfit.ui.profile.view.ui.main
 
 import androidx.lifecycle.ViewModel
 

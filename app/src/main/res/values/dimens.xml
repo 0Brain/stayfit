@@ -8,4 +8,5 @@
 
     <!--Profile_screen-->
     <dimen name="card_radius">8dp</dimen>
+
 </resources>

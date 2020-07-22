@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.ui.send
 
 import android.os.Bundle
@@ -8,7 +9,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.zenith.stayfit.R
 
 class SendFragment : Fragment() {
@@ -16,9 +16,9 @@ class SendFragment : Fragment() {
     private lateinit var sendViewModel: SendViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+      inflater: LayoutInflater,
+      container: ViewGroup?,
+      savedInstanceState: Bundle?
     ): View? {
         sendViewModel =
             ViewModelProvider(this).get(SendViewModel::class.java)
