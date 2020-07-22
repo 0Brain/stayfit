@@ -1,9 +1,9 @@
+
 package com.zenith.stayfit.commons.persistence.local
 
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Update
-
 
 interface BaseDao<T> {
 

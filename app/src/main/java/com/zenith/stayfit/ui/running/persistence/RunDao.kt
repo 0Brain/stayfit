@@ -1,13 +1,17 @@
+
 package com.zenith.stayfit.ui.running.persistence
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.zenith.stayfit.commons.persistence.local.BaseDao
 import com.zenith.stayfit.ui.running.model.Run
 
-
 @Dao
-abstract class RunDao:BaseDao<Run> {
+abstract class RunDao : BaseDao<Run> {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract suspend fun insertRun(run: Run)
@@ -41,5 +45,4 @@ abstract class RunDao:BaseDao<Run> {
 
     @Query("SELECT AVG(run_average_speed) FROM run_table")
     abstract fun getTotalAvgSpeed(): LiveData<Float>
-    
 }

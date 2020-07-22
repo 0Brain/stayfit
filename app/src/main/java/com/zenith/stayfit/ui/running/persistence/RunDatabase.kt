@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.ui.running.persistence
 
 import androidx.room.Database
@@ -12,6 +13,6 @@ import com.zenith.stayfit.ui.running.model.Run
     exportSchema = true
 )
 @TypeConverters(Converters::class)
-abstract class RunDatabase: RoomDatabase() {
-    abstract fun getRunDao():RunDao
+abstract class RunDatabase : RoomDatabase() {
+    abstract fun getRunDao(): RunDao
 }

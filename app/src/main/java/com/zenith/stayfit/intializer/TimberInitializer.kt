@@ -1,12 +1,10 @@
 
-
 package com.zenith.stayfit.intializer
 
 import android.content.Context
 import androidx.startup.Initializer
 import com.zenith.stayfit.BuildConfig
 import timber.log.Timber
-
 
 class TimberInitializer : Initializer<Unit> {
 
