@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.ui.share
 
 import android.os.Bundle
@@ -15,9 +16,9 @@ class ShareFragment : Fragment() {
     private lateinit var shareViewModel: ShareViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+      inflater: LayoutInflater,
+      container: ViewGroup?,
+      savedInstanceState: Bundle?
     ): View? {
         shareViewModel =
             ViewModelProviders.of(this).get(ShareViewModel::class.java)
