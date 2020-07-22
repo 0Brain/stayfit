@@ -29,7 +29,6 @@ class SupplementsFragment : Fragment(R.layout.fragment_supplements) {
         recycler_view.setHasFixedSize(true)
         recycler_view.adapter = adapter
 
-        (activity as MainActivity?)!!.hideFloatingActionButton()
         supplementsViewModel.getSupplements().observe(viewLifecycleOwner, Observer{t->
             adapter.setNotes(t!!)
         })
