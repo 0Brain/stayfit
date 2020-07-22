@@ -31,15 +31,45 @@
     <!--Profile Screen Fragment-->
     <string name="profile_page_image">userImage</string>
     <string name="profile_main_text">Profile</string>
-    <string name="profile_page_name">Username</string>
-    <string name="btn_profile_edit">EDIT PROFILE</string>
+    <string name="profile_page_name">developer@appsnipp.com</string>
 
-    <!--Profile Details Screen Fragment-->
-    <string name="txt_first_name">First Name</string>
-    <string name="txt_last_name">Last Name</string>
-    <string name="txt_email">Email</string>
-    <string name="txt_profile_location">Location</string>
-    <string name="txt_profile_birthday">Birthdate</string>
-    <string name="txt_profile_height">Height</string>
-    <string name="txt_profile_weight">Weight</string>
+
+
+
+    <!--Running Screen Fragment-->
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Running Time</item>
+        <item>Distance</item>
+        <item>Average Speed</item>
+        <item>Calories Burned</item>
+    </string-array>
+    <string name="nav_run_tracker_label">Running Tracker</string>
+    <string name="btn_run_apply_changes">Apply Changes</string>
+    <string name="txt_run_weight">Your Weight</string>
+    <string name="txt_run_name">Your Name</string>
+    <string name="btn_run_continue">Continue</string>
+    <string name="et_run_current_weight">Current Weight</string>
+    <string name="txt_run_total_distance">Total Distance</string>
+    <string name="google_maps_key">AIzaSyDsjT0bSjFcZg9EFgroRJIlJCYOyA8_2y4</string>
+    <string name="txt_run_total_time">Total Time</string>
+    <string name="txt_run_distance">0km</string>
+    <string name="txt_run_time">00:00:00</string>
+    <string name="txt_run_total_calories_burned">Total Calories Burned</string>
+    <string name="txt_run_calories_burned">0kcal</string>
+    <string name="txt_run_average_speed">Average Speed</string>
+    <string name="txt_run_speed">0km/h</string>
+    <string name="et_run_name">Name</string>
+    <string name="tv_run_tracking_timer">00:00:00:00</string>
+    <string name="btn_run_tracking_start">Start</string>
+    <string name="btn_run_tracking_finish_run">Finish Run</string>
+    <string name="tv_run_tracking_go">Let\'s go, USERNAME!</string>
+    <string name="tv_run_item_date">DATE</string>
+    <string name="tv_run_item_time">TIME</string>
+    <string name="tv_run_item_distance">DISTANCE</string>
+    <string name="tv_run_item_avgspeed">AVGSPEED</string>
+    <string name="tv_run_item_calories">CALORIES</string>
+    <string name="nav_running_tracker">Running Tracker</string>
+
+
 </resources>

@@ -18,10 +18,10 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.zenith.stayfit.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_run_track"
+        android:name="com.zenith.stayfit.ui.running.view.RunFragment"
+        android:label="@string/nav_run_tracker_label"
+        tools:layout="@layout/fragment_run_main" />
 
     <fragment
         android:id="@+id/nav_supplements"
