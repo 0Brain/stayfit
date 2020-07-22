@@ -78,11 +78,11 @@
     <string name="button_sign_up">Sign up</string>
     <string name="button_send">Send</string>
     <string name="text_forgot_password">Forgot password?</string>
-    <string name="text_signin_message">Hello, sign in to your account</string>
-    <string name="text_signin_social_media">Or Sign in using social media</string>
-    <string name="text_signup_social_media">Or Sign up using social media</string>
-    <string name="text_signin_signup">Don\'t have an account? <b>Sign up</b></string>
-    <string name="text_signup_terms">By signing up, you agree to our <b>terms and conditions</b></string>
+    <string name="text_signIn_message">Hello, sign in to your account</string>
+    <string name="text_signIn_social_media">Or Sign in using social media</string>
+    <string name="text_signUp_social_media">Or Sign up using social media</string>
+    <string name="text_signIn_signUp">Don\'t have an account? <b>Sign up</b></string>
+    <string name="text_signUp_terms">By signing up, you agree to our <b>terms and conditions</b></string>
     <string name="tv_signUpMsg">Hello, let\'s set up your account</string>
 
     <string name="text_forgot_password_title">Forgot password? No worries</string>
