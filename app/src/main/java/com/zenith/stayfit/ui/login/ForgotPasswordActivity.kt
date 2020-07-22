@@ -1,4 +1,3 @@
-
 package com.zenith.stayfit.ui.login
 
 import android.graphics.Color
@@ -17,7 +16,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        toolbar.setNavigationOnClickListener { super.onBackPressed() }
+        toolbar.setNavigationOnClickListener { onBackPressed() }
         setStatusBarWhite(this@ForgotPasswordActivity)
     }
 

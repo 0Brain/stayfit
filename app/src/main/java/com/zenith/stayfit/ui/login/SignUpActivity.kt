@@ -16,7 +16,7 @@ class SignUpActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        toolbar.setNavigationOnClickListener { super.onBackPressed() }
+        toolbar.setNavigationOnClickListener { onBackPressed() }
         setStatusBarWhite(this@SignUpActivity)
     }
 
