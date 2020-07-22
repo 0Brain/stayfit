@@ -28,4 +28,9 @@ class ForgotPasswordActivity : AppCompatActivity() {
             activity.window.statusBarColor = Color.WHITE
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.stay_still, R.anim.slide_left_to_right);
+    }
 }

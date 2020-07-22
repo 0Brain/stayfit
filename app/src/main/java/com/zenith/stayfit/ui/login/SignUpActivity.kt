@@ -1,4 +1,3 @@
-
 package com.zenith.stayfit.ui.login
 
 import android.graphics.Color
@@ -27,5 +26,10 @@ class SignUpActivity : AppCompatActivity() {
             activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             activity.window.statusBarColor = Color.WHITE
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.stay_still, R.anim.slide_left_to_right);
     }
 }

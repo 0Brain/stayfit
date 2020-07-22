@@ -1,4 +1,3 @@
-
 package com.zenith.stayfit.ui.login
 
 import android.content.Intent
@@ -33,8 +32,10 @@ class LoginActivity : AppCompatActivity() {
     fun onClick(view: View) {
         if (view.id == R.id.btn_signUp) {
             startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
+            overridePendingTransition(R.anim.slide_right_to_left, R.anim.stay_still)
         } else if (view.id == R.id.button_forgot_password) {
             startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
+            overridePendingTransition(R.anim.slide_right_to_left, R.anim.stay_still)
         }
     }
 }
