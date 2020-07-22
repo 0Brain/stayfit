@@ -32,6 +32,16 @@
     <string name="profile_page_image">userImage</string>
     <string name="profile_main_text">Profile</string>
     <string name="profile_page_name">developer@appsnipp.com</string>
+    <string name="btn_profile_edit">EDIT PROFILE</string>
+
+    <!--Profile Details Screen Fragment-->
+    <string name="txt_first_name">First Name</string>
+    <string name="txt_last_name">Last Name</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_profile_location">Location</string>
+    <string name="txt_profile_birthday">Birthdate</string>
+    <string name="txt_profile_height">Height</string>
+    <string name="txt_profile_weight">Weight</string>
 
 
 
