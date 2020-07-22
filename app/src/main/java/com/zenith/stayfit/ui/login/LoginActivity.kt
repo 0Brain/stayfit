@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun onClick(view: View) {
-        if (view.id == R.id.button_signup) {
+        if (view.id == R.id.btn_signUp) {
             startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
         } else if (view.id == R.id.button_forgot_password) {
             startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
