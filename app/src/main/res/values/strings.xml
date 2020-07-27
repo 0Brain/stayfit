@@ -101,6 +101,7 @@
     <string name="hint_email">Email</string>
     <string name="hint_phone">Phone</string>
     <string name="hint_confirm_password">Confirm Password</string>
+    <string name="txt_login_screen">It\'s good to see you again.</string>
 
 
 </resources>

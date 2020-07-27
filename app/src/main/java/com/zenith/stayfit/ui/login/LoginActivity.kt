@@ -19,9 +19,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setStatusBarTransparent(activity: AppCompatActivity) {
         // Make Status bar transparent
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            activity.window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-        }
+        activity.window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         // Make status bar icons color dark
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
@@ -30,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun onClick(view: View) {
-        if (view.id == R.id.btn_signUp) {
+        if (view.id == R.id.button_signUp) {
             startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
             overridePendingTransition(R.anim.slide_right_to_left, R.anim.stay_still)
         } else if (view.id == R.id.button_forgot_password) {
