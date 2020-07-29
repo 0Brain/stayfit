@@ -1,4 +1,4 @@
-package com.zenith.stayfit.ui.login
+package com.zenith.stayfit.ui.login.view.forgotpassword.ui
 
 import android.graphics.Color
 import android.os.Build

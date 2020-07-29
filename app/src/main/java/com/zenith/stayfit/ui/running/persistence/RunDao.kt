@@ -7,7 +7,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.zenith.stayfit.commons.persistence.local.BaseDao
+import com.zenith.stayfit.commons.persistence.BaseDao
 import com.zenith.stayfit.ui.running.model.Run
 
 @Dao

@@ -1,5 +1,5 @@
 
-package com.zenith.stayfit.commons.persistence.local
+package com.zenith.stayfit.commons.persistence
 
 import androidx.room.Delete
 import androidx.room.Insert
