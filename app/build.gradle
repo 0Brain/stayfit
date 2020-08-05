@@ -107,7 +107,7 @@ dependencies {
 
     // moshi
     implementation "com.squareup.moshi:moshi-kotlin:$versions.moshiVersion"
-    implementation "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshiVersion"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshiVersion"
 
     // coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesVersion"
@@ -142,5 +142,8 @@ dependencies {
     // Google Maps Location Services
     implementation "com.google.android.gms:play-services-location:$versions.mapsVersion"
     implementation "com.google.android.gms:play-services-maps:$versions.mapsVersion"
+
+    //Progress Dialog Box
+    implementation "com.github.d-max:spots-dialog:$versions.spotsVersion"
 
 }

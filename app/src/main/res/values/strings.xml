@@ -82,10 +82,23 @@
     <string name="nav_running_tracker">Running Tracker</string>
 
 
+
+    <!--Login -SignUp Screens-->
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
     <string name="button_sign_in">Sign in</string>
     <string name="button_sign_up">Sign up</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="txt_login_screen">It\'s good to see you again.</string>
+
+
+
+
+
+
+
     <string name="button_send">Send</string>
     <string name="text_forgot_password">Forgot password?</string>
     <string name="text_signIn_message">Hello, sign in to your account</string>
@@ -98,10 +111,7 @@
     <string name="text_forgot_password_title">Forgot password? No worries</string>
     <string name="text_forgot_password_message">We will send you a link to reset your password</string>
 
-    <string name="hint_email">Email</string>
-    <string name="hint_phone">Phone</string>
-    <string name="hint_confirm_password">Confirm Password</string>
-    <string name="txt_login_screen">It\'s good to see you again.</string>
+
 
 
 </resources>

@@ -21,7 +21,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="m">
         <activity
-            android:name=".ui.login.view.login.ui.LoginActivity"
+            android:name=".ui.login.view.LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -32,10 +32,10 @@
         </activity>
 
         <activity
-            android:name=".ui.login.view.forgotpassword.ui.ForgotPasswordActivity"
+            android:name=".ui.login.view.ForgotPasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.login.view.signup.ui.SignUpActivity"
+            android:name=".ui.login.view.SignUpActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <!--<meta-data
@@ -47,6 +47,17 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.zenith.stayfit.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+
+            <meta-data
+                android:name="com.zenith.stayfit.intializer.TimberInitializer"
+                android:value="androidx.startup" />
+        </provider>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.zenith.stayfit.ui.login.view.signup.ui
+package com.zenith.stayfit.ui.login.view
 
 import android.graphics.Color
 import android.os.Build
@@ -8,19 +8,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.zenith.stayfit.R
 
-class SignUpActivity : AppCompatActivity() {
+class ForgotPasswordActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        setContentView(R.layout.activity_forgot_password)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         toolbar.setNavigationOnClickListener { onBackPressed() }
-        setStatusBarWhite(this@SignUpActivity)
+        setStatusBarWhite(this@ForgotPasswordActivity)
     }
 
-    private fun setStatusBarWhite(activity: AppCompatActivity) {
+    fun setStatusBarWhite(activity: AppCompatActivity) {
         // Make status bar icons color dark
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR

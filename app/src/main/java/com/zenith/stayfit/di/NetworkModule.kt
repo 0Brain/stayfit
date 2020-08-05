@@ -1,7 +1,10 @@
 package com.zenith.stayfit.di
 
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.zenith.stayfit.Interceptors.HttpRequestInterceptor
-import com.zenith.stayfit.ui.login.network.LoginService
+import com.zenith.stayfit.commons.Constants
+import com.zenith.stayfit.ui.login.network.AuthenticationService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,28 +21,36 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideOkHttp():OkHttpClient{
+    fun provideOkHttp(): OkHttpClient {
         return OkHttpClient
             .Builder()
             .addInterceptor(HttpRequestInterceptor())
             .build()
     }
 
+    @Singleton
+    @Provides
+    fun provideMoshiInstance(): Moshi {
+        return Moshi.Builder()
+            .add(KotlinJsonAdapterFactory())
+            .build()
+    }
+
 
     @Singleton
     @Provides
-    fun provideRetrofitInstance(okHttpClient: OkHttpClient):Retrofit{
+    fun provideRetrofitInstance(okHttpClient: OkHttpClient,moshi: Moshi): Retrofit {
         return Retrofit
             .Builder()
             .client(okHttpClient)
-            .baseUrl("http://10.0.2.2:5000")
-            .addConverterFactory(MoshiConverterFactory.create())
+            .baseUrl(Constants.BASE_URL)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
     }
 
     @Singleton
     @Provides
-    fun provideLoginApi(retrofit: Retrofit):LoginService{
-        return retrofit.create(LoginService::class.java)
+    fun provideLoginApi(retrofit: Retrofit): AuthenticationService {
+        return retrofit.create(AuthenticationService::class.java)
     }
 }

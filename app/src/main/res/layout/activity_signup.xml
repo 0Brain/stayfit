@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:navigationIcon="@drawable/ic_back"></androidx.appcompat.widget.Toolbar>
+        app:navigationIcon="@drawable/ic_back" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,30 +35,6 @@
                 android:layout_centerVertical="true"
                 android:orientation="vertical">
 
-                <RelativeLayout
-                    android:id="@+id/signup_image_layout"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/image"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@mipmap/ic_launcher" />
-
-                    <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_margin="1dp"
-                        app:srcCompat="@drawable/ic_plus" />
-                </RelativeLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -66,185 +42,94 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="16dp"
                     android:text="@string/tv_signUpMsg"
-                    android:textColor="#696969"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"/>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="350dp"
+                    android:layout_marginTop="20dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="4dp"
-                    app:cardBackgroundColor="@color/colorTextInputBackground"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="0dp">
+                    android:hint="@string/hint_email"
+                    app:startIconDrawable="@drawable/ic_mail">
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_Email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        app:hintEnabled="false">
+                        android:inputType="textEmailAddress"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_email"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawableStart="@drawable/ic_mail"
-                            android:drawableLeft="@drawable/ic_mail"
-                            android:drawablePadding="12dp"
-                            android:hint="@string/hint_email"
-                            android:imeOptions="actionNext"
-                            android:inputType="textEmailAddress"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp"
-                            android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="350dp"
+                    android:layout_marginTop="20dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="4dp"
-                    app:cardBackgroundColor="@color/colorTextInputBackground"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="0dp">
+                    android:hint="@string/hint_username"
+                    app:startIconDrawable="@drawable/ic_person">
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_Username"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        app:hintEnabled="false">
+                        android:layout_height="wrap_content" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_username"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawableStart="@drawable/ic_person"
-                            android:drawableLeft="@drawable/ic_person"
-                            android:drawablePadding="12dp"
-                            android:hint="@string/hint_username"
-                            android:imeOptions="actionNext"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp"
-                            android:singleLine="true" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="350dp"
+                    android:layout_marginTop="20dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="4dp"
-                    app:cardBackgroundColor="@color/colorTextInputBackground"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="0dp">
+                    android:hint="@string/hint_phone"
+                    app:startIconDrawable="@drawable/ic_phone">
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_Phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        app:hintEnabled="false">
+                        android:inputType="number"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_phone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawableStart="@drawable/ic_phone"
-                            android:drawableLeft="@drawable/ic_phone"
-                            android:drawablePadding="12dp"
-                            android:hint="@string/hint_phone"
-                            android:imeOptions="actionNext"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp"
-                            android:singleLine="true" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="350dp"
+                    android:layout_marginTop="20dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="4dp"
-                    app:cardBackgroundColor="@color/colorTextInputBackground"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="0dp">
+                    android:hint="@string/hint_password"
+                    app:endIconMode="password_toggle"
+                    app:startIconDrawable="@drawable/ic_lock">
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        app:hintEnabled="false"
-                        app:passwordToggleEnabled="true">
+                        android:inputType="textPassword"/>
 
-                        <EditText
-                            android:id="@+id/et_password"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawableStart="@drawable/ic_lock"
-                            android:drawableLeft="@drawable/ic_lock"
-                            android:drawablePadding="12dp"
-                            android:hint="@string/hint_password"
-                            android:imeOptions="actionNext"
-                            android:inputType="textPassword"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="350dp"
+                    android:layout_marginTop="20dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="4dp"
-                    app:cardBackgroundColor="@color/colorTextInputBackground"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="0dp">
+                    android:hint="@string/hint_confirm_password"
+                    app:endIconMode="password_toggle"
+                    app:startIconDrawable="@drawable/ic_lock">
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_confirm_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        app:hintEnabled="false"
-                        app:passwordToggleEnabled="true">
+                        android:inputType="textPassword"/>
 
-                        <EditText
-                            android:id="@+id/et_confirm_password"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:background="@android:color/transparent"
-                            android:drawableStart="@drawable/ic_lock"
-                            android:drawableLeft="@drawable/ic_lock"
-                            android:drawablePadding="12dp"
-                            android:hint="@string/hint_confirm_password"
-                            android:imeOptions="actionDone"
-                            android:inputType="textPassword"
-                            android:minWidth="320dp"
-                            android:minHeight="45dp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                     android:id="@+id/button_signin"
@@ -268,24 +153,47 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:text="@string/text_signUp_social_media"
-                        android:textColor="@color/md_black_1000"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_margin="8dp"
-                            app:srcCompat="@drawable/ic_facebook" />
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="7dp"
+                            app:cardElevation="5dp">
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_margin="8dp"
-                            app:srcCompat="@drawable/ic_google" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:elevation="10dp"
+                                android:padding="5dp"
+                                app:srcCompat="@drawable/ic_facebook_new"
+                                tools:ignore="ContentDescription" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            app:cardCornerRadius="7dp"
+                            app:cardElevation="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                app:srcCompat="@drawable/ic_google_new"
+                                tools:ignore="ContentDescription" />
+                        </androidx.cardview.widget.CardView>
+
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -297,6 +205,7 @@
                     android:gravity="center"
                     android:padding="8dp"
                     android:text="@string/text_signUp_terms"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
             </LinearLayout>
 
