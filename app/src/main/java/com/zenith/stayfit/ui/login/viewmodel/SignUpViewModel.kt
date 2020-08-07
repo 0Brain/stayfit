@@ -8,9 +8,6 @@ class SignUpViewModel @ViewModelInject constructor(
     private val signUpRepository: SignUpRepository
 ) : ViewModel() {
 
-
-
-
     suspend fun signUpEntries(
         username: String,
         email: String,

@@ -4,7 +4,9 @@ package com.zenith.stayfit.ui.profile.view.ui.detail
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.zenith.stayfit.R
 import java.util.Locale
 import java.util.SortedSet
