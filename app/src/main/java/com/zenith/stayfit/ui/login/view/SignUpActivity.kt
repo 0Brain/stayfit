@@ -25,12 +25,13 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SignUpActivity : AppCompatActivity() {
 
-    private var parentJob: Job = Job()
+    private var parentJob: Job = SupervisorJob()
     private var exceptionHandler: CoroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
        Timber.d(exception)
     }
-    private val coroutineScope = CoroutineScope(Dispatchers.Main + parentJob + exceptionHandler)
-
+    private val coroutineScope by lazy {
+        CoroutineScope(Dispatchers.Main + parentJob + exceptionHandler)
+    }
 
     private lateinit var binding: ActivitySignupBinding
 
