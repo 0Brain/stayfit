@@ -1,4 +1,4 @@
-# Stay fit 📺 (work-in-progress 👷🔧️👷‍♀️⛏)
+# Stay fit (work-in-progress 👷🔧️👷‍♀️⛏)
 
 ## Android development
 
@@ -16,4 +16,11 @@ Stay fit  is an app which attempts to use the latest cutting edge libraries and 
  
  If you find that one of your pull reviews does not pass the CI server check due to a code style conflict, you can
  easily fix it by running: `./gradlew spotlessApply`, or running IntelliJ/Android Studio's code formatter.
+ 
+ ## Contributions
 
+If you've found an error in this sample, please file an issue.
+
+Patches are encouraged, and may be submitted by forking this project and
+submitting a pull request. Since this project is still in its very early stages,
+if your change is substantial, please raise an issue first to discuss it.
