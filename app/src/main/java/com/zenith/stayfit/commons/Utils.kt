@@ -39,16 +39,17 @@ fun getProgressDialog(context: Context, msg: String): AlertDialog {
         }
 }
 
-fun getMessageFromResponseCode(statusCode: Int): String {
+fun getMessageFromResponseCode(statusCode: Int,statusResponse:String): String {
     return when (statusCode) {
-        200 -> ServerConstants.successfulSignUpResponse
-        500 -> ServerConstants.duplicateUser
-        501 -> "The server either does not recognize the request method"
-        502 -> "Bad Gateway"
-        503 -> "Service Unavailable"
-        504 -> "Gateway Timeout"
-        505 -> "HTTP Version Not Supported"
-        511 -> "Network Authentication Required"
+        statusCode -> statusResponse
+//        200 -> ServerConstants.successfulSignUpResponse
+//        500 -> ServerConstants.duplicateUser
+//        501 -> "The server either does not recognize the request method"
+//        502 -> "Bad Gateway"
+//        503 -> "Service Unavailable"
+//        504 -> "Gateway Timeout"
+//        505 -> "HTTP Version Not Supported"
+//        511 -> "Network Authentication Required"
 
         else -> "Something wrong happened"
     }

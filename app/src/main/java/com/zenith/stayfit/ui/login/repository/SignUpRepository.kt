@@ -29,9 +29,9 @@ class SignUpRepository @Inject constructor(private val authenticationService: Au
                 registerBody
             )
             if (response.isSuccessful) {
-                return@withContext getMessageFromResponseCode(response.code())
+                return@withContext getMessageFromResponseCode(response.code(),response.body()!!.data.message)
             }else {
-                return@withContext getMessageFromResponseCode(response.code())
+                return@withContext getMessageFromResponseCode(response.code(),response.body()!!.data.message)
             }
         }
         message = messageFromServer
