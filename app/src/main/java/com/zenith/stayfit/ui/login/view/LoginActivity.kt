@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.ui.login.view
 
 import android.content.Intent
@@ -14,12 +15,11 @@ import com.zenith.stayfit.ui.login.model.login.AuthenticationLoginRequest
 import com.zenith.stayfit.ui.login.model.login.LoginBody
 import com.zenith.stayfit.ui.login.network.AuthenticationService
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import timber.log.Timber
-import javax.inject.Inject
-
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
@@ -34,7 +34,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         setStatusBarTransparent(this@LoginActivity)
 
-
         binding.buttonSignIn.setOnClickListener {
             val username = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
@@ -48,15 +47,15 @@ class LoginActivity : AppCompatActivity() {
             )
                 .enqueue(object : Callback<AuthenticationLoginRequest> {
                     override fun onFailure(
-                        call: Call<AuthenticationLoginRequest>,
-                        t: Throwable
+                      call: Call<AuthenticationLoginRequest>,
+                      t: Throwable
                     ) {
                         Timber.d(t)
                     }
 
                     override fun onResponse(
-                        call: Call<AuthenticationLoginRequest>,
-                        response: Response<AuthenticationLoginRequest>
+                      call: Call<AuthenticationLoginRequest>,
+                      response: Response<AuthenticationLoginRequest>
                     ) {
                             val responseBody = response.body()
                             Toast.makeText(
@@ -72,7 +71,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
             overridePendingTransition(R.anim.slide_right_to_left, R.anim.stay_still)
         }
-
     }
 
     private fun setStatusBarTransparent(activity: AppCompatActivity) {
@@ -84,6 +82,4 @@ class LoginActivity : AppCompatActivity() {
             activity.window.statusBarColor = Color.WHITE
         }
     }
-
-
 }

@@ -1,13 +1,11 @@
+
 package com.zenith.stayfit.commons
 
-import android.app.AlertDialog
-import android.content.Context
-import dmax.dialog.SpotsDialog
 import java.util.regex.Pattern
 
 object Constants {
 
-    const val SIGN_IN:String = "/api/v1/login"
+    const val SIGN_IN: String = "/api/v1/login"
 
     const val SIGN_UP: String = "/api/v1/register"
 

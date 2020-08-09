@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.di
 
 import com.squareup.moshi.Moshi
@@ -9,11 +10,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Singleton
-
 
 @InstallIn(ApplicationComponent::class)
 @Module
@@ -36,10 +36,9 @@ object NetworkModule {
             .build()
     }
 
-
     @Singleton
     @Provides
-    fun provideRetrofitInstance(okHttpClient: OkHttpClient,moshi: Moshi): Retrofit {
+    fun provideRetrofitInstance(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit {
         return Retrofit
             .Builder()
             .client(okHttpClient)
