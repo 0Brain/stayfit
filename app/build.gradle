@@ -57,6 +57,21 @@ android {
         exclude 'META-INF/ASL2.0'
         exclude("META-INF/*.kotlin_module")
     }
+
+    buildTypes {
+
+        release {
+            buildConfigField('String', 'BASE_URL', "\"http://10.0.2.2:5000\"")
+            buildConfigField('String', 'SIGN_UP', "\"/api/v1/register\"")
+            buildConfigField('String', 'SIGN_IN', "\"/api/v1/login\"")
+        }
+
+        debug {
+            buildConfigField('String', 'BASE_URL', "\"http://10.0.2.2:5000\"")
+            buildConfigField('String', 'SIGN_UP', "\"/api/v1/register\"")
+            buildConfigField('String', 'SIGN_IN', "\"/api/v1/login\"")
+        }
+    }
 }
 
 dependencies {

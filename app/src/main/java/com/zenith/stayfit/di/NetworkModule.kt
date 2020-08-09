@@ -2,8 +2,8 @@ package com.zenith.stayfit.di
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.zenith.stayfit.BuildConfig
 import com.zenith.stayfit.Interceptors.HttpRequestInterceptor
-import com.zenith.stayfit.commons.Constants
 import com.zenith.stayfit.ui.login.network.AuthenticationService
 import dagger.Module
 import dagger.Provides
@@ -39,11 +39,11 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofitInstance(okHttpClient: OkHttpClient,moshi: Moshi): Retrofit {
+    fun provideRetrofitInstance(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit {
         return Retrofit
             .Builder()
             .client(okHttpClient)
-            .baseUrl(Constants.BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
     }
