@@ -55,8 +55,8 @@ android {
     buildTypes {
 
         release {
-            shrinkResources true
-            minifyEnabled true
+            //shrinkResources true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField('String', 'BASE_URL', "\"http://10.0.2.2:5000\"")
             buildConfigField('String', 'SIGN_UP', "\"/api/v1/register\"")
@@ -64,8 +64,8 @@ android {
         }
 
         debug {
-            shrinkResources true
-            minifyEnabled true
+            //shrinkResources true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField('String', 'BASE_URL', "\"http://10.0.2.2:5000\"")
             buildConfigField('String', 'SIGN_UP', "\"/api/v1/register\"")
