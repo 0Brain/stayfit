@@ -3,41 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/navigation_diary">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@id/navigation_diary"
         android:name="com.zenith.stayfit.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/nav_diary"
+        tools:layout="@layout/fragment_home"/>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.zenith.stayfit.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:id="@+id/navigation_workout"
+        android:name="com.zenith.stayfit.ui.running.view.RunFragment"
+        android:label="@string/nav_workout"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_run_track"
-        android:name="com.zenith.stayfit.ui.running.view.RunFragment"
-        android:label="@string/nav_run_tracker_label"
+        android:id="@+id/navigation_nutrition"
+        android:name="com.zenith.stayfit.ui.supplements.SupplementsFragment"
+        android:label="@string/nav_nutrition"
         tools:layout="@layout/fragment_run_main" />
 
     <fragment
-        android:id="@+id/nav_supplements"
-        android:name="com.zenith.stayfit.ui.supplements.SupplementsFragment"
-        android:label="@string/nav_supplements"
-        tools:layout="@layout/fragment_supplements" />
+        android:id="@+id/navigation_user"
+        android:name="com.zenith.stayfit.ui.profile.view.ui.main.ProfileMainFragment"
+        android:label="@string/nav_user"
+        tools:layout="@layout/profile_fragment" />
 
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.zenith.stayfit.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.zenith.stayfit.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
 </navigation>
