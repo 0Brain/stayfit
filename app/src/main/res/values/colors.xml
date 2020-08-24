@@ -17,6 +17,11 @@
     <color name="profilePrimaryDark">#FF3B30</color>
     <color name="profileBackground">#fff</color>
 
+    <!--Meals Fragment-->
+    <color name="tvBasic">#b0bec5</color>
+    <color name="tvClicked">#455a64</color>
+
+
 
     <!--Running Fragment-->
     <color name="md_blue_50">#E3F2FD</color>

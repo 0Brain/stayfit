@@ -77,7 +77,7 @@
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_action_button"
+            android:id="@+id/fab_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
@@ -92,7 +92,7 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton5"
+        android:id="@+id/fab_water"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
@@ -107,7 +107,7 @@
         app:srcCompat="@drawable/ic_water" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton6"
+        android:id="@+id/fab_workout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -115,13 +115,13 @@
         android:backgroundTint="@color/colorBackground"
         android:visibility="invisible"
         app:borderWidth="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton5"
-        app:layout_constraintTop_toTopOf="@+id/floatingActionButton5"
+        app:layout_constraintEnd_toStartOf="@+id/fab_water"
+        app:layout_constraintTop_toTopOf="@+id/fab_water"
         app:rippleColor="@color/colorPrimary"
         app:srcCompat="@drawable/ic_gym" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton7"
+        android:id="@+id/fab_meals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -129,8 +129,8 @@
         android:backgroundTint="@color/colorBackground"
         android:visibility="invisible"
         app:borderWidth="0dp"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton5"
-        app:layout_constraintTop_toTopOf="@+id/floatingActionButton5"
+        app:layout_constraintStart_toEndOf="@+id/fab_water"
+        app:layout_constraintTop_toTopOf="@+id/fab_water"
         app:rippleColor="@color/colorPrimary"
         app:srcCompat="@drawable/ic_eat" />
 
