@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@id/navigation_diary"
-        android:name="com.zenith.stayfit.ui.home.HomeFragment"
+        android:name="com.zenith.stayfit.ui.diary.DiaryFragment"
         android:label="@string/nav_diary"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_diary" />
 
     <fragment
         android:id="@+id/navigation_workout"
@@ -21,7 +21,7 @@
         android:id="@+id/navigation_nutrition"
         android:name="com.zenith.stayfit.ui.supplements.SupplementsFragment"
         android:label="@string/nav_nutrition"
-        tools:layout="@layout/fragment_run_main" />
+        tools:layout="@layout/fragment_supplements" />
 
     <fragment
         android:id="@+id/navigation_user"

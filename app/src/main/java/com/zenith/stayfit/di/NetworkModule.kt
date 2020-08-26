@@ -3,7 +3,6 @@ package com.zenith.stayfit.di
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import com.zenith.stayfit.BuildConfig
 import com.zenith.stayfit.Interceptors.HttpRequestInterceptor
 import com.zenith.stayfit.commons.Constants
 import com.zenith.stayfit.ui.login.network.AuthenticationService

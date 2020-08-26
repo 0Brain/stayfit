@@ -1,8 +1,6 @@
 
 package com.zenith.stayfit.ui.supplements.Adapter
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +33,7 @@ class SupplementAdapter() : RecyclerView.Adapter<SupplementAdapter.ViewHolder>()
         holder.bindItems(supplementList[position])
     }
 
-    open class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+    open class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bindItems(supplementItem: Supplement) {
             val textViewName = itemView.findViewById(R.id.primary_supplement) as TextView
             val textViewSubtext = itemView.findViewById(R.id.supplement_subtext) as TextView
@@ -56,17 +54,6 @@ class SupplementAdapter() : RecyclerView.Adapter<SupplementAdapter.ViewHolder>()
                     expandButton.setImageResource(R.drawable.ic_expand_more_black_36dp)
                 }
             }
-        }
-
-        override fun onClick(view: View?) {
-            var intent: Intent? = null
-            val context: Context = view!!.context
-            when (adapterPosition) {
-                0 -> {
-                    intent = Intent(context, creatineSuppliment::class.java)
-                }
-            }
-            context.startActivity(intent!!)
         }
     }
 }

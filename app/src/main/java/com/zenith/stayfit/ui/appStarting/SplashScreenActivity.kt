@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.ui.appStarting
 
 import android.content.Intent
@@ -27,7 +28,6 @@ class SplashScreenActivity : AppCompatActivity() {
         setAppTextAnimation()
 
         setNextScreen()
-
     }
 
     private fun setGif() {
@@ -35,7 +35,6 @@ class SplashScreenActivity : AppCompatActivity() {
         Glide.with(this)
             .load(R.drawable.splash_gif)
             .into(splashScreenActivity.ivGif)
-
     }
 
     private fun setAppTextAnimation() {
@@ -43,7 +42,6 @@ class SplashScreenActivity : AppCompatActivity() {
         appLogoAnimation = AnimationUtils.loadAnimation(this, R.anim.app_text_animation)
 
         splashScreenActivity.tvAppText.animation = appLogoAnimation
-
     }
 
     private fun setNextScreen() {
@@ -56,6 +54,5 @@ class SplashScreenActivity : AppCompatActivity() {
             // Close this activity
             finish()
         }, 4000)
-
     }
 }

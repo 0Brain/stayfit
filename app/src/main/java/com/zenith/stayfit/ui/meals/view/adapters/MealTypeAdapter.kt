@@ -1,10 +1,9 @@
+
 package com.zenith.stayfit.ui.meals.view.adapters
 
 import android.content.res.Resources
-import android.graphics.Color
 import android.os.Build
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
@@ -38,7 +37,7 @@ class MealTypeAdapter : RecyclerView.Adapter<MealTypeAdapter.ViewHolder>() {
         holder.bindItems(meals[position])
         binding.apply {
             if (position == globalPosition) {
-                tvMeal.setTextColor(resource.getColor(R.color.colorPrimary, null))
+                tvMeal.setTextColor(resource.getColor(R.color.tvClicked, null))
                 cvMeals.strokeColor = resource.getColor(R.color.colorPrimary, null)
             } else {
                 cvMeals.strokeColor = resource.getColor(R.color.tvBasic, null)
@@ -50,7 +49,6 @@ class MealTypeAdapter : RecyclerView.Adapter<MealTypeAdapter.ViewHolder>() {
     fun insertTo(meals: List<MealType>) {
         this.meals = meals
     }
-
 
     @RequiresApi(Build.VERSION_CODES.M)
     inner class ViewHolder(private var binding: ItemMealBinding) :

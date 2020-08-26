@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit
 
 import android.content.Intent
@@ -18,12 +19,10 @@ import com.zenith.stayfit.databinding.ActivityMainBinding
 import com.zenith.stayfit.ui.meals.view.MealsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-
-    //Lazy initialization of animation objects fot FAB
+    // Lazy initialization of animation objects fot FAB
     private val rotateOpen: Animation by lazy {
         AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim)
     }

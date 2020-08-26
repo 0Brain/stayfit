@@ -1,7 +1,8 @@
+
 package com.zenith.stayfit.ui.meals.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.zenith.stayfit.R
 

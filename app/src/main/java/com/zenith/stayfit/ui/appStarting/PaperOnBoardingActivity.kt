@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.ui.appStarting
 
 import android.content.Intent
@@ -35,7 +36,6 @@ class PaperOnBoardingActivity : AppCompatActivity() {
         paperOnBoardingActivity.btnLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
-
     }
 
     private fun setUpOnBoardingEngine() {
@@ -57,7 +57,6 @@ class PaperOnBoardingActivity : AppCompatActivity() {
                 paperOnBoardingActivity.btnLogin.visibility = View.GONE
             }
         })
-
     }
 
     private fun getDataForOnboarding(): ArrayList<PaperOnboardingPage> {
