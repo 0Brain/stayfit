@@ -1,79 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <com.google.android.material.appbar.CollapsingToolbarLayout
-        android:id="@+id/toolbar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        app:title="zxcv"
-        app:contentScrim="@color/profilePrimaryDark"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed"
-        app:toolbarId="@+id/toolbar"
-        app:expandedTitleMarginEnd="64dp"
-        app:expandedTitleMarginStart="48dp"
-        app:expandedTitleTextAppearance="@style/TransparentText">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:title="Username"
-            android:layout_width="match_parent"
-           app:titleTextColor="@color/txt_color"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_collapseMode="pin"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="135dp"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:id="@+id/linearLayout">
+        android:layout_height="124dp"
+        android:layout_marginTop="128dp"
+        android:contentDescription="@string/profile_page_image"
+        android:src="@drawable/ic_profile_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/profile_page_name"
+        android:textColor="@color/txt_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-                android:textColor="@color/txt_color"
-                android:text="@string/profile_main_text"
-                android:textSize="30sp"
-                android:textStyle="bold"/>
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-
-                android:src="@drawable/ic_profile_screen"
-                android:contentDescription="@string/profile_page_image" />
+    <Button
+        android:id="@+id/textButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:elevation="100dp"
+        android:text="@string/btn_profile_edit"
+        android:textColor="@color/txt_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/profile_page_name"
-                android:textColor="@color/txt_color"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-            <Button
-                android:id="@+id/textButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="100dp"
-                android:textColor="@color/txt_color"
-                android:text="@string/btn_profile_edit"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon" />
-        </LinearLayout>
-
-       
-
-    </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

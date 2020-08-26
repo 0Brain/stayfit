@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.ui.appStarting
 
 import android.content.Intent
@@ -16,13 +17,13 @@ import com.zenith.stayfit.ui.login.view.LoginActivity
 
 class PaperOnBoardingActivity : AppCompatActivity() {
 
-    lateinit var paperOnBoardingActivity: ActivityPaperOnBoardingBinding
+    private lateinit var paperOnBoardingActivity: ActivityPaperOnBoardingBinding
 
-    lateinit var engine: PaperOnboardingEngine
+    private lateinit var engine: PaperOnboardingEngine
 
-    var listSize: Int = 0
+    private var listSize: Int = 0
 
-    lateinit var btnLoginAnimation: Animation
+    private lateinit var btnLoginAnimation: Animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +36,6 @@ class PaperOnBoardingActivity : AppCompatActivity() {
         paperOnBoardingActivity.btnLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
-
     }
 
     private fun setUpOnBoardingEngine() {
@@ -46,7 +46,7 @@ class PaperOnBoardingActivity : AppCompatActivity() {
             applicationContext
         )
 
-        engine.setOnChangeListener(PaperOnboardingOnChangeListener { oldElementIndex, newElementIndex ->
+        engine.setOnChangeListener(PaperOnboardingOnChangeListener { _, newElementIndex ->
 
             if (newElementIndex == listSize - 1) {
                 paperOnBoardingActivity.btnLogin.visibility = View.VISIBLE
@@ -57,7 +57,6 @@ class PaperOnBoardingActivity : AppCompatActivity() {
                 paperOnBoardingActivity.btnLogin.visibility = View.GONE
             }
         })
-
     }
 
     private fun getDataForOnboarding(): ArrayList<PaperOnboardingPage> {

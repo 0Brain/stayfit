@@ -1,5 +1,5 @@
-package com.zenith.stayfit.ui.login.model
 
+package com.zenith.stayfit.ui.login.model
 
 sealed class ResultState {
     class Success(val items: List<String>) : ResultState()
