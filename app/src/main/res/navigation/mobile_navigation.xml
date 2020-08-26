@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@id/navigation_diary"
-        android:name="com.zenith.stayfit.ui.diary.DiaryFragment"
+        android:name="com.zenith.stayfit.ui.diary.view.fragments.DiaryFragment"
         android:label="@string/nav_diary"
         tools:layout="@layout/fragment_diary" />
 
@@ -32,6 +32,47 @@
         android:id="@+id/mealsFragment"
         android:name="com.zenith.stayfit.ui.meals.view.MealsFragment"
         android:label="@string/nav_meals"
-        tools:layout="@layout/fragment_meals" />
+        tools:layout="@layout/fragment_meals" >
+        <action
+            android:id="@+id/action_mealsFragment_to_addFoodFragment"
+            app:destination="@id/addFoodFragment"
+            app:enterAnim="@anim/slide_left_to_right"
+            app:exitAnim="@anim/slide_right_to_left" />
+        <action
+            android:id="@+id/action_mealsFragment_to_addExerciseFragment"
+            app:destination="@id/addExerciseFragment" />
+        <action
+            android:id="@+id/action_mealsFragment_to_addWaterFragment"
+            app:destination="@id/addWaterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.zenith.stayfit.ui.diary.view.fragments.FoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" >
+        <action
+            android:id="@+id/action_addFoodFragment_to_mealsFragment"
+            app:destination="@id/mealsFragment"
+            app:enterAnim="@anim/slide_left_to_right"
+            app:exitAnim="@anim/slide_right_to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/addExerciseFragment"
+        android:name="com.zenith.stayfit.ui.diary.view.fragments.ExerciseFragment"
+        android:label="fragment_add_exercise"
+        tools:layout="@layout/fragment_add_exercise" >
+        <action
+            android:id="@+id/action_addExerciseFragment_to_mealsFragment"
+            app:destination="@id/mealsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWaterFragment"
+        android:name="com.zenith.stayfit.ui.diary.view.fragments.WaterFragment"
+        android:label="fragment_add_water"
+        tools:layout="@layout/fragment_add_water" >
+        <action
+            android:id="@+id/action_addWaterFragment_to_mealsFragment"
+            app:destination="@id/mealsFragment" />
+    </fragment>
 
 </navigation>
