@@ -5,7 +5,7 @@ import android.view.View
 import androidx.annotation.IdRes
 import androidx.recyclerview.widget.RecyclerView
 import com.zenith.stayfit.R
-import com.zenith.stayfit.commons.BaseRecyclerViewItemTouchListener
+import com.zenith.stayfit.commons.recycler.BaseRecyclerViewItemTouchListener
 import org.jetbrains.annotations.NotNull
 import org.jetbrains.annotations.Nullable
 

@@ -69,5 +69,11 @@ ext.versions = [
         mapsVersion             : '17.0.0',
 
         //Progress Dialog Box
-        spotsVersion            : '1.1@aar'
+        spotsVersion            : '1.1@aar',
+
+        //Search
+        lapsimSearchVersion     : '2.2.0@aar',
+
+        //Vision API
+        visionAPIVersion        : '20.1.2'
 ]

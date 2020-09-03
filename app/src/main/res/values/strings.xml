@@ -105,11 +105,27 @@
     <string name="text_forgot_password_message">We will send you a link to reset your password</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+
+
     <!--food tab strings-->
     <string name="tab_all">ALL</string>
     <string name="tab_recipes">RECIPES</string>
     <string name="tab_my_foods">MY FOODS</string>
     <string name="tab_meals">MEALS</string>
+
+    <string-array name="tab_items">
+    <item>@string/tab_all</item>
+    <item>@string/tab_recipes</item>
+    <item>@string/tab_my_foods</item>
+    <item>@string/tab_meals</item>
+    </string-array>
+
+    <string name="item_position">Item %1$d</string>
+    <string name="search_hint">Search for a food</string>
+    <string name="search">Search for a food</string>
+    <string name="speak">Speak mortal</string>
+    <string name="txt_foods_history">History</string>
 
 
 </resources>

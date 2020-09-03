@@ -5,6 +5,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.zenith.stayfit.Interceptors.HttpRequestInterceptor
 import com.zenith.stayfit.commons.Constants
+import com.zenith.stayfit.ui.diary.network.FoodService
 import com.zenith.stayfit.ui.login.network.AuthenticationService
 import dagger.Module
 import dagger.Provides
@@ -42,7 +43,7 @@ object NetworkModule {
         return Retrofit
             .Builder()
             .client(okHttpClient)
-            .baseUrl(Constants.BASE_URL)
+            .baseUrl(Constants.INGREDIENTS_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
     }
@@ -51,5 +52,11 @@ object NetworkModule {
     @Provides
     fun provideLoginApi(retrofit: Retrofit): AuthenticationService {
         return retrofit.create(AuthenticationService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideFoodApi(retrofit: Retrofit):FoodService{
+        return retrofit.create(FoodService::class.java)
     }
 }

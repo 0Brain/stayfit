@@ -1,5 +1,5 @@
 
-package com.zenith.stayfit.commons
+package com.zenith.stayfit.commons.recycler
 
 import android.graphics.Rect
 import android.view.GestureDetector

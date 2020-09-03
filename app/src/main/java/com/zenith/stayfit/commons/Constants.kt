@@ -15,6 +15,8 @@ object Constants {
 
     const val BASE_URL: String = "http://10.0.2.2:5000"
 
+    const val INGREDIENTS_URL: String = "https://wger.de/api/v2/"
+
     val EMAIL_ADDRESS_PATTERN: Pattern = Pattern.compile(
         "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                 "\\@" +
