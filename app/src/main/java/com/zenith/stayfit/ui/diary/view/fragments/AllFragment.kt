@@ -25,16 +25,15 @@ import javax.inject.Inject
 class AllFragment : Fragment(R.layout.fragment_all) {
 
     private lateinit var fragmentAllBinding: FragmentAllBinding
-    private val adapter: AllFoodsRecyclerViewAdapter by lazy {
-        AllFoodsRecyclerViewAdapter()
-    }
+    private lateinit var  adapter: AllFoodsRecyclerViewAdapter
 
     @Inject lateinit var foodService: FoodService
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentAllBinding = FragmentAllBinding.bind(view)
-        setupRecyclerView(fragmentAllBinding.rvAll)
+
+
 
 
         foodService.getFoods().enqueue(object :Callback<Food>{
@@ -43,72 +42,69 @@ class AllFragment : Fragment(R.layout.fragment_all) {
             }
 
             override fun onResponse(call: Call<Food>, response: Response<Food>) {
-                Timber.d("value = ${response.body()?.results?.get(1)?.carbohydrates}")
+                Timber.d("value = ${response.body()?.results}")
+                adapter = AllFoodsRecyclerViewAdapter(response.body()!!.results)
+
+                fragmentAllBinding.svAll.apply {
+                    navigationIconSupport = SearchLayout.NavigationIconSupport.SEARCH
+                    setOnNavigationClickListener(object : SearchLayout.OnNavigationClickListener {
+                        override fun onNavigationClick() {
+                            requestFocus()
+                        }
+                    })
+                    setTextHint(getString(R.string.search))
+                    setOnQueryTextListener(object : SearchLayout.OnQueryTextListener {
+                        override fun onQueryTextChange(newText: CharSequence): Boolean {
+                            return false
+                        }
+
+                        override fun onQueryTextSubmit(query: CharSequence): Boolean {
+                            adapter.filter.filter(query)
+                            fragmentAllBinding.tvCount.text = adapter.foodItemsCount.toString()
+                            fragmentAllBinding.rvAll.adapter = adapter
+                            return true
+                        }
+                    })
+                    setMicIconImageResource(R.drawable.ic_mic)
+                    setOnMicClickListener(object : SearchLayout.OnMicClickListener {
+                        override fun onMicClick() {
+                            if (activity?.let { SearchUtils.isVoiceSearchAvailable(it) }!!) {
+                                activity?.let {
+                                    SearchUtils.setVoiceSearch(
+                                        it,
+                                        getString(R.string.speak)
+                                    )
+                                }
+                            }
+                        }
+                    })
+                    setMenuIconImageResource(R.drawable.ic_barcode)
+                    setOnMenuClickListener(object : SearchLayout.OnMenuClickListener {
+                        override fun onMenuClick() {
+
+                        }
+                    })
+
+                    elevation = 0f
+                    setBackgroundStrokeWidth(resources.getDimensionPixelSize(R.dimen.search_stroke_width))
+                    setBackgroundStrokeColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.AshGray
+                        )
+                    )
+                    setOnFocusChangeListener(object : SearchLayout.OnFocusChangeListener {
+                        override fun onFocusChange(hasFocus: Boolean) {
+                            navigationIconSupport = if (hasFocus) {
+                                SearchLayout.NavigationIconSupport.ARROW
+                            } else {
+                                SearchLayout.NavigationIconSupport.SEARCH
+                            }
+                        }
+                    })
+                }
             }
 
         })
-
-
-
-        fragmentAllBinding.svAll.apply {
-            navigationIconSupport = SearchLayout.NavigationIconSupport.SEARCH
-            setOnNavigationClickListener(object : SearchLayout.OnNavigationClickListener {
-                override fun onNavigationClick() {
-                    requestFocus()
-                }
-            })
-            setTextHint(getString(R.string.search))
-            setOnQueryTextListener(object : SearchLayout.OnQueryTextListener {
-                override fun onQueryTextChange(newText: CharSequence): Boolean {
-                    adapter.filter.filter(newText)
-                    return false
-                }
-
-                override fun onQueryTextSubmit(query: CharSequence): Boolean {
-                    return true
-                }
-            })
-            setMicIconImageResource(R.drawable.ic_mic)
-            setOnMicClickListener(object : SearchLayout.OnMicClickListener {
-                override fun onMicClick() {
-                    if (activity?.let { SearchUtils.isVoiceSearchAvailable(it) }!!) {
-                        activity?.let {
-                            SearchUtils.setVoiceSearch(
-                                it,
-                                getString(R.string.speak)
-                            )
-                        }
-                    }
-                }
-            })
-            setMenuIconImageResource(R.drawable.ic_barcode)
-            setOnMenuClickListener(object : SearchLayout.OnMenuClickListener {
-                override fun onMenuClick() {
-
-                }
-            })
-
-            elevation = 0f
-            setBackgroundStrokeWidth(resources.getDimensionPixelSize(R.dimen.search_stroke_width))
-            setBackgroundStrokeColor(
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.AshGray
-                )
-            )
-            setOnFocusChangeListener(object : SearchLayout.OnFocusChangeListener {
-                override fun onFocusChange(hasFocus: Boolean) {
-                    navigationIconSupport = if (hasFocus) {
-                        SearchLayout.NavigationIconSupport.ARROW
-                    } else {
-                        SearchLayout.NavigationIconSupport.SEARCH
-                    }
-                }
-            })
-        }
-    }
-
-    private fun setupRecyclerView(@NonNull recyclerView: RecyclerView) {
-        recyclerView.adapter = adapter
     }
 }

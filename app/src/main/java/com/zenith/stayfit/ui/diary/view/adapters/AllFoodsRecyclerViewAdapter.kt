@@ -10,15 +10,20 @@ import com.zenith.stayfit.R
 import com.zenith.stayfit.databinding.FragmentAllBinding
 import com.zenith.stayfit.databinding.ItemFoodBinding
 import com.zenith.stayfit.databinding.ItemMealBinding
+import com.zenith.stayfit.ui.diary.model.Result
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.properties.Delegates
 
-class AllFoodsRecyclerViewAdapter :RecyclerView.Adapter<AllFoodsRecyclerViewAdapter.ViewHolder>(),
+class AllFoodsRecyclerViewAdapter(var foodItems: List<Result>) :
+    RecyclerView.Adapter<AllFoodsRecyclerViewAdapter.ViewHolder>(),
     Filterable {
 
     private lateinit var itemFoodBinding: ItemFoodBinding
-    var mStringFilterList: List<String>? = null
     private var valueFilter: ValueFilter? = null
+    var mStringFilterList: List<Result>? = foodItems
+    var foodItemsCount: Int? = null
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -27,18 +32,26 @@ class AllFoodsRecyclerViewAdapter :RecyclerView.Adapter<AllFoodsRecyclerViewAdap
     }
 
     override fun getItemCount(): Int {
-        return 20
+        return foodItems.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bindItems(foodItems[position])
     }
 
-    class ViewHolder(itemFoodBinding: ItemFoodBinding) : RecyclerView.ViewHolder(itemFoodBinding.root){
 
+    class ViewHolder(private val itemFoodBinding: ItemFoodBinding) :
+        RecyclerView.ViewHolder(itemFoodBinding.root) {
+        fun bindItems(result: Result) {
+            itemFoodBinding.tvFoodName.text = result.name
+            itemFoodBinding.tvFoodCalories.text = result.energy.toString()
+            itemFoodBinding.tvFoodQuantity.text = result.status
+
+        }
     }
 
     override fun getFilter(): Filter {
-        if(valueFilter == null){
+        if (valueFilter == null) {
             valueFilter = ValueFilter()
         }
         return valueFilter as ValueFilter
@@ -48,9 +61,9 @@ class AllFoodsRecyclerViewAdapter :RecyclerView.Adapter<AllFoodsRecyclerViewAdap
         override fun performFiltering(constraint: CharSequence): FilterResults {
             val results = FilterResults()
             if (constraint.isNotEmpty()) {
-                val filterList: MutableList<String> = ArrayList()
+                val filterList: MutableList<Result> = ArrayList()
                 for (i in mStringFilterList?.indices!!) {
-                    if (mStringFilterList!![i].toUpperCase(Locale.ROOT).contains(
+                    if (mStringFilterList!![i].name.toUpperCase(Locale.ROOT).contains(
                             constraint.toString().toUpperCase(Locale.ROOT)
                         )
                     ) {
@@ -70,7 +83,8 @@ class AllFoodsRecyclerViewAdapter :RecyclerView.Adapter<AllFoodsRecyclerViewAdap
             constraint: CharSequence,
             results: FilterResults
         ) {
-            //heroes = results.values as List<String>
+            foodItemsCount = results.count
+            foodItems = results.values as List<Result>
             notifyDataSetChanged()
         }
     }
