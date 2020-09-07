@@ -1,6 +1,8 @@
 
 package com.zenith.stayfit.di
 
+import com.zenith.stayfit.ui.diary.network.FoodService
+import com.zenith.stayfit.ui.diary.repository.AllRepository
 import com.zenith.stayfit.ui.login.network.AuthenticationService
 import com.zenith.stayfit.ui.login.repository.SignUpRepository
 import dagger.Module
@@ -16,5 +18,11 @@ object RepositoryModule {
     @Provides
     fun provideNoteRepository(gameApi: AuthenticationService): SignUpRepository {
         return SignUpRepository(gameApi)
+    }
+
+    @Singleton
+    @Provides
+    fun provideAllRepository(foodService: FoodService): AllRepository {
+        return AllRepository(foodService)
     }
 }

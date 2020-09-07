@@ -5,6 +5,8 @@ import android.view.View
 import androidx.annotation.NonNull
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.lapism.search.internal.SearchLayout
 import com.lapism.search.util.SearchUtils
@@ -13,7 +15,10 @@ import com.zenith.stayfit.databinding.FragmentAllBinding
 import com.zenith.stayfit.ui.diary.model.Food
 import com.zenith.stayfit.ui.diary.network.FoodService
 import com.zenith.stayfit.ui.diary.view.adapters.AllFoodsRecyclerViewAdapter
+import com.zenith.stayfit.ui.diary.view.viewmodel.AllViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,26 +30,19 @@ import javax.inject.Inject
 class AllFragment : Fragment(R.layout.fragment_all) {
 
     private lateinit var fragmentAllBinding: FragmentAllBinding
-    private lateinit var  adapter: AllFoodsRecyclerViewAdapter
-
-    @Inject lateinit var foodService: FoodService
+    private lateinit var adapter: AllFoodsRecyclerViewAdapter
+    private val allViewModel: AllViewModel by viewModels()
+    @Inject
+    lateinit var foodService: FoodService
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentAllBinding = FragmentAllBinding.bind(view)
 
-
-
-
-        foodService.getFoods().enqueue(object :Callback<Food>{
-            override fun onFailure(call: Call<Food>, t: Throwable) {
-                Timber.d(t)
-            }
-
-            override fun onResponse(call: Call<Food>, response: Response<Food>) {
-                Timber.d("value = ${response.body()?.results}")
-                adapter = AllFoodsRecyclerViewAdapter(response.body()!!.results)
-
+        lifecycleScope.launch {
+            allViewModel.getFoodItems().collect { results ->
+                Timber.d("Thread in viewmodel = ${Thread.currentThread().name}")
+                adapter = AllFoodsRecyclerViewAdapter(results)
                 fragmentAllBinding.svAll.apply {
                     navigationIconSupport = SearchLayout.NavigationIconSupport.SEARCH
                     setOnNavigationClickListener(object : SearchLayout.OnNavigationClickListener {
@@ -104,7 +102,6 @@ class AllFragment : Fragment(R.layout.fragment_all) {
                     })
                 }
             }
-
-        })
+        }
     }
 }
