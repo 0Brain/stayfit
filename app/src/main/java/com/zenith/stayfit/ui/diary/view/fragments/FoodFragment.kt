@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.ui.diary.view.fragments
 
 import android.os.Bundle
@@ -5,14 +6,12 @@ import android.view.View
 import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrategy
 import com.zenith.stayfit.R
 import com.zenith.stayfit.databinding.FragmentAddFoodBinding
-
 
 class FoodFragment : Fragment(R.layout.fragment_add_food) {
 

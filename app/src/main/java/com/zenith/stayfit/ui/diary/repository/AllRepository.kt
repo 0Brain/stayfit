@@ -1,14 +1,15 @@
+
 package com.zenith.stayfit.ui.diary.repository
 
-import androidx.lifecycle.LiveData
 import com.zenith.stayfit.ui.diary.model.Result
 import com.zenith.stayfit.ui.diary.network.FoodService
+import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import timber.log.Timber
-import javax.inject.Inject
 
 class AllRepository @Inject constructor(private val foodService: FoodService) {
 
@@ -16,9 +17,8 @@ class AllRepository @Inject constructor(private val foodService: FoodService) {
         val response = foodService.getFoods()
         if (response.isSuccessful) {
             emit(response.body()!!.results)
-            Timber.d("Thread in viewmodel = ${Thread.currentThread().name}")
-        } else if (!response.isSuccessful) {
-            Timber.d(response.message())
         }
+    }.catch { cause ->
+        Timber.d(cause)
     }.flowOn(Dispatchers.IO)
 }

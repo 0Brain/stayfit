@@ -1,19 +1,15 @@
+
 package com.zenith.stayfit.ui.diary.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.zenith.stayfit.R
-import com.zenith.stayfit.databinding.FragmentAllBinding
 import com.zenith.stayfit.databinding.ItemFoodBinding
-import com.zenith.stayfit.databinding.ItemMealBinding
 import com.zenith.stayfit.ui.diary.model.Result
-import java.util.*
+import java.util.Locale
 import kotlin.collections.ArrayList
-import kotlin.properties.Delegates
 
 class AllFoodsRecyclerViewAdapter(var foodItems: List<Result>) :
     RecyclerView.Adapter<AllFoodsRecyclerViewAdapter.ViewHolder>(),
@@ -23,7 +19,6 @@ class AllFoodsRecyclerViewAdapter(var foodItems: List<Result>) :
     private var valueFilter: ValueFilter? = null
     var mStringFilterList: List<Result>? = foodItems
     var foodItemsCount: Int? = null
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -39,14 +34,12 @@ class AllFoodsRecyclerViewAdapter(var foodItems: List<Result>) :
         holder.bindItems(foodItems[position])
     }
 
-
     class ViewHolder(private val itemFoodBinding: ItemFoodBinding) :
         RecyclerView.ViewHolder(itemFoodBinding.root) {
         fun bindItems(result: Result) {
             itemFoodBinding.tvFoodName.text = result.name
             itemFoodBinding.tvFoodCalories.text = result.energy.toString()
             itemFoodBinding.tvFoodQuantity.text = result.status
-
         }
     }
 
@@ -80,8 +73,8 @@ class AllFoodsRecyclerViewAdapter(var foodItems: List<Result>) :
         }
 
         override fun publishResults(
-            constraint: CharSequence,
-            results: FilterResults
+          constraint: CharSequence,
+          results: FilterResults
         ) {
             foodItemsCount = results.count
             foodItems = results.values as List<Result>

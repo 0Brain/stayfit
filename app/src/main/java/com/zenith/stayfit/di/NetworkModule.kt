@@ -56,7 +56,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideFoodApi(retrofit: Retrofit):FoodService{
+    fun provideFoodApi(retrofit: Retrofit): FoodService {
         return retrofit.create(FoodService::class.java)
     }
 }

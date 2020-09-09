@@ -1,3 +1,4 @@
+
 package com.zenith.stayfit.commons.recycler
 
 import android.content.Context
@@ -10,7 +11,7 @@ import androidx.viewpager2.widget.ViewPager2
 import kotlin.math.absoluteValue
 import kotlin.math.sign
 
-class NestedScrollableHost:FrameLayout {
+class NestedScrollableHost : FrameLayout {
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
