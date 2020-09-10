@@ -12,24 +12,21 @@ import com.lapism.search.internal.SearchLayout
 import com.lapism.search.util.SearchUtils
 import com.zenith.stayfit.R
 import com.zenith.stayfit.databinding.FragmentAllBinding
-import com.zenith.stayfit.ui.diary.network.FoodService
 import com.zenith.stayfit.ui.diary.view.adapters.AllFoodsRecyclerViewAdapter
 import com.zenith.stayfit.ui.diary.view.viewmodel.AllViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import kotlin.system.measureTimeMillis
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class AllFragment : Fragment(R.layout.fragment_all) {
+class AllFragment: Fragment(R.layout.fragment_all) {
 
     private lateinit var fragmentAllBinding: FragmentAllBinding
     private lateinit var adapter: AllFoodsRecyclerViewAdapter
     private val allViewModel: AllViewModel by viewModels()
 
-    @Inject
-    lateinit var foodService: FoodService
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

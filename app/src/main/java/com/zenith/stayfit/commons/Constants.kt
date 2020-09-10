@@ -17,6 +17,10 @@ object Constants {
 
     const val INGREDIENTS_URL: String = "https://wger.de/api/v2/"
 
+    const val HEADER_CACHE_CONTROL = "Cache-Control"
+
+    const val HEADER_PRAGMA = "Pragma"
+
     val EMAIL_ADDRESS_PATTERN: Pattern = Pattern.compile(
         "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                 "\\@" +

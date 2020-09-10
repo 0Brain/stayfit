@@ -17,6 +17,13 @@ class AllRepository @Inject constructor(private val foodService: FoodService) {
         val response = foodService.getFoods()
         if (response.isSuccessful) {
             emit(response.body()!!.results)
+            if(response.raw().networkResponse != null){
+                Timber.d( "onResponse: response is from NETWORK...");
+            }
+            else if(response.raw().cacheResponse != null
+                && response.raw().networkResponse == null){
+                Timber.d("onResponse: response is from CACHE...");
+            }
         }
     }.catch { cause ->
         Timber.d(cause)

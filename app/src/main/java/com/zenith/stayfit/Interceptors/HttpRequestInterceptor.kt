@@ -9,8 +9,9 @@ class HttpRequestInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalRequest = chain.request()
         val request = originalRequest.newBuilder().url(originalRequest.url).build()
+        Timber.d("onRequest:REQUEST TO NETWORK $request")
         val response = chain.proceed(request)
-        Timber.d(request.toString())
+        Timber.d("onResponse:RESPONSE FROM NETWORK $response")
         return response
     }
 }

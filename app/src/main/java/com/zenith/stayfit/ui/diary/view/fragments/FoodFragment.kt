@@ -17,6 +17,7 @@ class FoodFragment : Fragment(R.layout.fragment_add_food) {
 
     private lateinit var fragmentFoodBinding: FragmentAddFoodBinding
     private lateinit var tabTitles: Array<String>
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentFoodBinding = FragmentAddFoodBinding.bind(view)
